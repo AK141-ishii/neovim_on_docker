@@ -80,11 +80,12 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+"SPLIT MOVE
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
+"COMPLETION
 inoremap <Tab> <C-p>
 

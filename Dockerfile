@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
 MAINTAINER AK141
+ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
 
 USER root
 
@@ -18,16 +19,12 @@ RUN apt-get update && \
     python-dev \
     python-pip \
     python3-dev \
-    python3-pip
+    python3-pip \
+    && pip3 install --upgrade neovim \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && mkdir /data
 
-ENV LANG="ja_JP.UTF-8" LANGUAGE="ja_JP:ja" LC_ALL="ja_JP.UTF-8"
-
-RUN pip3 install --upgrade neovim
-
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-COPY .config /root/.config
-RUN mkdir /data
 WORKDIR /data
+COPY .config /root/.config
 
 ENTRYPOINT [ "/bin/bash" ]
