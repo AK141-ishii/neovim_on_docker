@@ -31,4 +31,4 @@ RUN chmod +x /root/.setting \
 
 WORKDIR /data
 
-ENTRYPOINT [ "nvim" ]
+ENTRYPOINT [ "/bin/bash" ]
