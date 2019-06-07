@@ -24,7 +24,11 @@ RUN apt-get update && \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && mkdir /data
 
-WORKDIR /data
 COPY .config /root/.config
+COPY .setting /root/.setting
+RUN chmod +x /root/.setting \
+    && bash /root/.setting/adapt.sh
 
-ENTRYPOINT [ "/bin/bash" ]
+WORKDIR /data
+
+ENTRYPOINT [ "nvim" ]
