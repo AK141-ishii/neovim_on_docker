@@ -5,7 +5,6 @@ set fenc=utf-8
 set autoindent
 set shiftwidth=4
 set tabstop=4
-set expandtab
 set smarttab
 set clipboard=unnamed
 
@@ -86,6 +85,4 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"COMPLETION
-inoremap <Tab> <C-p>
 
