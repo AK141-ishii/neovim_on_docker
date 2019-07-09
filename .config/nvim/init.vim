@@ -15,7 +15,6 @@ set cursorline
 set cursorcolumn
 set title
 set showmatch
-syntax on
 colorscheme molokai
 set t_Co=256
 set termguicolors
@@ -70,6 +69,7 @@ if dein#check_install()
   call dein#install()
 endif
 
+syntax enable
 
 "KEY_CONFIG
 "=====================
