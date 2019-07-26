@@ -23,6 +23,9 @@ RUN apt-get update && \
     && pip3 install --upgrade neovim \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && mkdir /data
+RUN apt update && apt upgrade -y && \
+    apt install -y \
+    gdb yasm clang
 
 COPY .config /root/.config
 COPY .setting /root/.setting
